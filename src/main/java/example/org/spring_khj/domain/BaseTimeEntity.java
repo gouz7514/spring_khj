@@ -10,13 +10,13 @@ import javax.persistence.MappedSuperclass;
 import java.time.LocalDateTime;
 
 @Getter
-@MappedSuperclass
-@EntityListeners(AuditingEntityListener.class)
+@MappedSuperclass // JPA Entity 클래스들이 BaseTimeEntity 상속 시 필드들도 칼럼으로 인식하도록
+@EntityListeners(AuditingEntityListener.class) // BaseTimeEntity 클래스에 Auditing 기능 포함시킴
 public class BaseTimeEntity {
 
     @CreatedDate
-    private LocalDateTime createdDate;
+    private LocalDateTime createdDate; // Entity 생성되어 저장될 때 시간 자동 저장
 
     @LastModifiedDate
-    private LocalDateTime modifiedDate;
+    private LocalDateTime modifiedDate; // 조회한 Entity 값 변경 시 시간 자동 저장
 }

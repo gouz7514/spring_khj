@@ -37,7 +37,7 @@ public class PostsRepositoryTest {
                                     .author("gouz7514@gmail.com")
                                     .build());
 
-        List<Posts> postsList = postsRepository.findAll();
+        List<Posts> postsList = postsRepository.findAll(); // 테이블 posts에 있는 모든 데이터를 조회
 
         Posts posts = postsList.get(0);
         assertThat(posts.getTitle()).isEqualTo(title);
