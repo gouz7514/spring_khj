@@ -7,11 +7,12 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 
+// Posts 클래스는 실제 DB의 테이블과 매칭될 클래스, Entity 클래스
 @Getter
 @NoArgsConstructor
-@Entity
+@Entity // 테이블과 링크될 클래스
 public class Posts extends BaseTimeEntity {
-    @Id
+    @Id // PK
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 

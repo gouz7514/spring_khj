@@ -8,6 +8,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 
+// 페이지에 관련된 Controller
+
 @RequiredArgsConstructor
 @Controller
 public class IndexController {
