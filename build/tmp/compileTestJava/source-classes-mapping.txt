@@ -1,0 +1,2 @@
+example/org/spring_khj/HelloControllerTest.java
+ example.org.spring_khj.HelloControllerTest
