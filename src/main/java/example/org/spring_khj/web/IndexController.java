@@ -1,5 +1,6 @@
 package example.org.spring_khj.web;
 
+import example.org.spring_khj.config.auth.dto.SessionUser;
 import example.org.spring_khj.service.posts.PostsService;
 import example.org.spring_khj.web.dto.PostsResponseDto;
 import lombok.RequiredArgsConstructor;
@@ -8,6 +9,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 
+import javax.servlet.http.HttpSession;
+
 // 페이지에 관련된 Controller
 
 @RequiredArgsConstructor
@@ -15,10 +18,15 @@ import org.springframework.web.bind.annotation.PathVariable;
 public class IndexController {
 
     private final PostsService postsService;
+    private final HttpSession httpSession;
 
     @GetMapping("/")
     public String index(Model model) {
         model.addAttribute("posts", postsService.findAllDesc());
+        SessionUser user = (SessionUser) httpSession.getAttribute("user");
+        if (user != null) {
+            model.addAttribute("userName", user.getName());
+        }
         return "index";
     }
 
