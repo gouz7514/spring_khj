@@ -1,6 +1,6 @@
 package example.org.spring_khj.service.posts;
 
-import com.sun.xml.internal.ws.developer.Serialization;
+//import com.sun.xml.internal.ws.developer.Serialization;
 import example.org.spring_khj.domain.posts.Posts;
 import example.org.spring_khj.domain.posts.PostsRepository;
 import example.org.spring_khj.web.dto.PostsListResponseDto;
